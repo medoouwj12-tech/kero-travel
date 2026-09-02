@@ -1,13 +1,14 @@
 /* ==========================================================================
    KERO TRAVEL - LUXURY TRAVEL & VIP LIMOUSINE
    Theme: Deep Obsidian Black & Glowing Glossy Electric Blue
+   Mobile & Touch Screen First Responsive Enhancements
    ========================================================================== */
 
 :root {
   --bg-pitch-black: #000000;
-  --bg-deep-black: #030712;
-  --bg-dark-card: rgba(5, 10, 20, 0.85);
-  --bg-dark-panel: rgba(8, 14, 28, 0.9);
+  --bg-deep-black: #02040A;
+  --bg-dark-card: rgba(4, 8, 18, 0.9);
+  --bg-dark-panel: rgba(6, 12, 24, 0.95);
   
   --electric-blue-light: #00F0FF;
   --electric-blue: #0099FF;
@@ -15,8 +16,8 @@
   --glossy-sky: #38BDF8;
   --glossy-cyan: #22D3EE;
   
-  --glass-border: rgba(0, 240, 255, 0.2);
-  --glass-border-hover: rgba(0, 240, 255, 0.5);
+  --glass-border: rgba(0, 240, 255, 0.22);
+  --glass-border-hover: rgba(0, 240, 255, 0.6);
   --neon-glow: 0 0 25px rgba(0, 153, 255, 0.4);
   --neon-glow-strong: 0 0 35px rgba(0, 240, 255, 0.6);
   
@@ -33,19 +34,26 @@ html[dir="ltr"] {
   font-family: var(--font-en);
 }
 
+* {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #02040A;
+  background-color: #000000;
   color: #F8FAFC;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  touch-action: manipulation;
+  width: 100%;
 }
 
-/* Custom Electric Blue Scrollbar */
+/* Custom Electric Blue Scrollbar (Desktop) */
 ::-webkit-scrollbar {
-  width: 9px;
+  width: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #02040A;
+  background: #000000;
 }
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(180deg, #00F0FF, #0066FF);
@@ -54,41 +62,42 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #00F0FF;
-  box-shadow: 0 0 15px rgba(0, 240, 255, 0.8);
 }
 
 /* Glassmorphism Dark Black & Glossy Blue */
 .glass-panel {
-  background: rgba(4, 9, 20, 0.82);
+  background: rgba(4, 9, 20, 0.88);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(0, 180, 255, 0.18);
-  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 180, 255, 0.2);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.85);
 }
 
 .glass-panel-light {
-  background: rgba(10, 20, 38, 0.6);
+  background: rgba(8, 16, 32, 0.7);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid rgba(0, 240, 255, 0.22);
 }
 
 .glass-panel-neon {
-  background: linear-gradient(135deg, rgba(0, 240, 255, 0.1) 0%, rgba(3, 7, 18, 0.95) 100%);
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.12) 0%, rgba(2, 5, 14, 0.98) 100%);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(0, 240, 255, 0.4);
-  box-shadow: 0 0 30px rgba(0, 153, 255, 0.2);
+  box-shadow: 0 0 30px rgba(0, 153, 255, 0.25);
 }
 
 .glass-card {
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  background: rgba(4, 8, 18, 0.85);
-  border: 1px solid rgba(0, 180, 255, 0.15);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(4, 8, 18, 0.88);
+  border: 1px solid rgba(0, 180, 255, 0.18);
 }
-.glass-card:hover {
-  transform: translateY(-7px);
-  border-color: rgba(0, 240, 255, 0.6);
-  box-shadow: 0 20px 45px -10px rgba(0, 153, 255, 0.4), 0 0 25px rgba(0, 240, 255, 0.25);
+@media (hover: hover) {
+  .glass-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(0, 240, 255, 0.6);
+    box-shadow: 0 20px 45px -10px rgba(0, 153, 255, 0.4), 0 0 25px rgba(0, 240, 255, 0.25);
+  }
 }
 
 /* Radiant Glossy Gradients */
@@ -96,7 +105,7 @@ body {
   background: linear-gradient(135deg, #FFFFFF 0%, #38BDF8 40%, #00F0FF 80%, #0088FF 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 2px 10px rgba(0, 240, 255, 0.3));
+  filter: drop-shadow(0 2px 10px rgba(0, 240, 255, 0.35));
 }
 
 .text-gradient-sky {
@@ -109,51 +118,51 @@ body {
   background: linear-gradient(135deg, #00F0FF 0%, #0088FF 50%, #0044CC 100%);
   transition: all 0.35s ease;
 }
-.bg-gradient-glossy-blue:hover {
-  background: linear-gradient(135deg, #38BDF8 0%, #00F0FF 50%, #0077FF 100%);
-  box-shadow: 0 0 30px rgba(0, 240, 255, 0.7);
-}
 
 .bg-gradient-button {
   background: linear-gradient(135deg, #00D2FF 0%, #0066FF 100%);
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.25s ease;
+  border: 1px solid rgba(255, 255, 255, 0.25);
 }
-.bg-gradient-button:hover {
-  background: linear-gradient(135deg, #00F0FF 0%, #0088FF 100%);
-  box-shadow: 0 0 30px rgba(0, 210, 255, 0.7);
+.bg-gradient-button:active {
+  transform: scale(0.98);
+}
+@media (hover: hover) {
+  .bg-gradient-button:hover {
+    background: linear-gradient(135deg, #00F0FF 0%, #0088FF 100%);
+    box-shadow: 0 0 30px rgba(0, 210, 255, 0.7);
+  }
 }
 
 .bg-gradient-whatsapp {
   background: linear-gradient(135deg, #25D366 0%, #059669 100%);
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
   border: 1px solid rgba(0, 240, 255, 0.3);
 }
-.bg-gradient-whatsapp:hover {
-  background: linear-gradient(135deg, #2EE872 0%, #10B981 100%);
-  box-shadow: 0 0 30px rgba(37, 211, 102, 0.6), 0 0 15px rgba(0, 240, 255, 0.4);
+.bg-gradient-whatsapp:active {
+  transform: scale(0.98);
+}
+@media (hover: hover) {
+  .bg-gradient-whatsapp:hover {
+    background: linear-gradient(135deg, #2EE872 0%, #10B981 100%);
+    box-shadow: 0 0 30px rgba(37, 211, 102, 0.6), 0 0 15px rgba(0, 240, 255, 0.4);
+  }
 }
 
-/* Background animated neon glow orbs */
+/* Background animated neon glow orbs (hidden or subtle on mobile for ultra performance) */
 .glow-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(100px);
-  opacity: 0.28;
+  filter: blur(80px);
+  opacity: 0.22;
   pointer-events: none;
   animation: floatOrb 12s infinite alternate ease-in-out;
 }
 
 @keyframes floatOrb {
-  0% {
-    transform: translate(0, 0) scale(1);
-  }
-  50% {
-    transform: translate(40px, -30px) scale(1.15);
-  }
-  100% {
-    transform: translate(-30px, 40px) scale(0.9);
-  }
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, -20px) scale(1.1); }
+  100% { transform: translate(-20px, 30px) scale(0.95); }
 }
 
 /* Pulsing effect for booking badges */
@@ -165,11 +174,11 @@ body {
   position: absolute;
   top: -2px;
   right: -2px;
-  width: 11px;
-  height: 11px;
+  width: 10px;
+  height: 10px;
   background-color: #00F0FF;
   border-radius: 50%;
-  border: 2px solid #02040A;
+  border: 2px solid #000000;
   animation: pulseNeon 2s infinite;
 }
 
@@ -180,7 +189,7 @@ body {
   }
   70% {
     transform: scale(1);
-    box-shadow: 0 0 0 10px rgba(0, 240, 255, 0);
+    box-shadow: 0 0 0 8px rgba(0, 240, 255, 0);
   }
   100% {
     transform: scale(0.95);
@@ -188,36 +197,35 @@ body {
   }
 }
 
-/* Shimmer animation */
-.shimmer {
-  background: linear-gradient(90deg, rgba(0,240,255,0) 0%, rgba(0,240,255,0.15) 50%, rgba(0,240,255,0) 100%);
-  background-size: 200% 100%;
-  animation: shimmer 3s infinite;
-}
-
-@keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
-}
-
 /* Image zoom on hover */
 .img-zoom-container {
   overflow: hidden;
-  background-color: #02040A;
+  background-color: #000000;
 }
 .img-zoom-container img {
-  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: transform 0.5s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-.img-zoom-container:hover img {
-  transform: scale(1.08);
+@media (hover: hover) {
+  .img-zoom-container:hover img {
+    transform: scale(1.06);
+  }
 }
 
-/* Form input custom focus styling with Glossy Neon Blue border */
+/* Form input custom focus styling - 16px minimum font size to prevent iOS zoom */
 .custom-input {
-  background: rgba(3, 7, 16, 0.9);
+  background: rgba(3, 7, 16, 0.95);
   border: 1px solid rgba(0, 180, 255, 0.25);
   color: #FFFFFF;
-  transition: all 0.3s ease;
+  font-size: 16px; /* Prevents auto-zoom in iOS Safari */
+  transition: all 0.25s ease;
+}
+@media (min-width: 640px) {
+  .custom-input {
+    font-size: 0.875rem; /* 14px on desktop */
+  }
 }
 .custom-input:focus {
   background: rgba(4, 10, 24, 0.98);
@@ -230,18 +238,11 @@ body {
   color: #FFFFFF;
 }
 
-/* Step Wizard Pill active states */
-.step-item.active .step-bubble {
-  background: #0099FF;
-  color: #FFFFFF;
-  box-shadow: 0 0 20px rgba(0, 240, 255, 0.7);
-}
-
 /* Custom Radio styling for vehicle selector */
 .vehicle-radio:checked + label {
-  border-color: #00F0FF;
-  background: rgba(0, 153, 255, 0.18);
-  box-shadow: 0 0 25px rgba(0, 240, 255, 0.35);
+  border-color: #00F0FF !important;
+  background: rgba(0, 153, 255, 0.22) !important;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.35) !important;
 }
 
 /* WhatsApp live preview text bubble */
@@ -263,13 +264,13 @@ html[dir="rtl"] .whatsapp-bubble {
 }
 @keyframes floatBtn {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  50% { transform: translateY(-6px); }
 }
 
 /* Map frame styling */
 .map-container iframe {
   filter: contrast(1.1) saturate(1.15) brightness(0.95);
-  border-radius: 1rem;
+  border-radius: 0.75rem;
 }
 
 /* Smooth RTL/LTR icon flips */
@@ -279,7 +280,7 @@ html[dir="rtl"] .icon-flip-rtl {
 
 /* Car Gallery Badge */
 .fleet-badge {
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.88);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(0, 240, 255, 0.4);
   box-shadow: 0 0 15px rgba(0, 240, 255, 0.25);
@@ -287,10 +288,78 @@ html[dir="rtl"] .icon-flip-rtl {
 
 /* Glowing Border Accent Cards */
 .glow-card-blue {
-  border: 1px solid rgba(0, 240, 255, 0.25);
-  box-shadow: 0 0 20px rgba(0, 153, 255, 0.15);
+  border: 1px solid rgba(0, 240, 255, 0.22);
+  box-shadow: 0 0 20px rgba(0, 153, 255, 0.12);
 }
-.glow-card-blue:hover {
-  border-color: rgba(0, 240, 255, 0.7);
-  box-shadow: 0 0 30px rgba(0, 240, 255, 0.4);
+@media (hover: hover) {
+  .glow-card-blue:hover {
+    border-color: rgba(0, 240, 255, 0.7);
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.4);
+  }
+}
+
+/* Mobile Safe Bottom Padding */
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 1rem);
+}
+
+/* =========================================
+   MOBILE-FIRST RESPONSIVE OPTIMIZATIONS
+   ========================================= */
+
+/* ---- Tiny phones ≤380px ---- */
+@media (max-width: 380px) {
+  h1 { font-size: 1.75rem !important; line-height: 1.25 !important; }
+}
+
+/* ---- All phones ≤640px ---- */
+@media (max-width: 640px) {
+  /* Section vertical spacing tighter */
+  section { padding-top: 2.5rem !important; padding-bottom: 2.5rem !important; }
+
+  /* Fleet card images shorter */
+  #fleet .img-zoom-container { height: 200px !important; }
+
+  /* Package card illustration shorter */
+  #packages .relative.h-56 { height: 9rem !important; }
+
+  /* Booking form - force single column */
+  .grid.sm\:grid-cols-2 { grid-template-columns: 1fr !important; }
+  .sm\:col-span-2 { grid-column: span 1 !important; }
+
+  /* WhatsApp preview box shorter */
+  #whatsapp-preview-box { max-height: 160px !important; font-size: 0.7rem !important; line-height: 1.45 !important; }
+
+  /* Map shorter on mobile */
+  .map-container iframe { min-height: 240px !important; }
+  .map-container { min-height: 260px !important; }
+}
+
+/* ---- All tablets & phones ≤768px touch targets ---- */
+@media (max-width: 768px) {
+  /* Min 44px tap targets per Apple HIG */
+  button, a[href] { min-height: 44px; }
+
+  /* Disable sticky hover lift on touch devices */
+  .glass-card:hover { transform: none !important; }
+  .hover\:scale-105:hover { transform: none !important; }
+  .hover\:scale-\[1\.02\]:hover { transform: none !important; }
+
+  /* Active state feedback instead */
+  button:active, a:active { opacity: 0.85 !important; }
+}
+
+/* ---- Safe area insets (iPhone notch & home bar) ---- */
+@supports (padding: env(safe-area-inset-bottom)) {
+  body { padding-bottom: env(safe-area-inset-bottom); }
+
+  .fixed.bottom-6.end-6 {
+    bottom: calc(1.5rem + env(safe-area-inset-bottom));
+  }
+}
+
+/* ---- Landscape phone (short height) ---- */
+@media (max-height: 500px) and (orientation: landscape) {
+  #home { padding-top: 1rem !important; padding-bottom: 1.5rem !important; }
+  h1 { font-size: 1.5rem !important; line-height: 1.2 !important; }
 }
