@@ -34,9 +34,16 @@ html[dir="ltr"] {
   font-family: var(--font-en);
 }
 
+/* === CRITICAL: Prevent horizontal overflow gap on mobile === */
+html {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
 * {
   -webkit-tap-highlight-color: transparent;
   box-sizing: border-box;
+  max-width: 100%;
 }
 
 body {
@@ -46,6 +53,8 @@ body {
   scroll-behavior: smooth;
   touch-action: manipulation;
   width: 100%;
+  max-width: 100vw;
+  position: relative;
 }
 
 /* Custom Electric Blue Scrollbar (Desktop) */
@@ -157,6 +166,9 @@ body {
   opacity: 0.22;
   pointer-events: none;
   animation: floatOrb 12s infinite alternate ease-in-out;
+  /* Prevent orbs from causing layout overflow */
+  contain: strict;
+  will-change: transform;
 }
 
 @keyframes floatOrb {
